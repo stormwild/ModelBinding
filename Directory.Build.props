@@ -7,13 +7,24 @@
     <LangVersion>12.0</LangVersion>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
 
-    <!-- Additional useful settings -->
-    <AnalysisMode>All</AnalysisMode>
+  <!-- Additional useful settings -->
+  <PropertyGroup>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <!-- Don't warn of weak Random usage, ex. Random.Shared.Next() -->
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);SCS0005;CA5394</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 </Project>
